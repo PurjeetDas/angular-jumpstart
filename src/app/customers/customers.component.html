@@ -1,0 +1,39 @@
+<div class="card">
+
+    <div class="card-body border border-primary">
+        <h5 class="card-title">{{ title }}</h5>
+        <br/>
+        
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a (click)="changeDisplayMode(displayModeEnum.Card)" class="nav-link" [class.active]="displayMode === displayModeEnum.Card" >
+                    <i class="fa fa-th-large"></i> &nbsp;&nbsp; Card View
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a (click)="changeDisplayMode(displayModeEnum.Grid)" class="nav-link" [class.active]="displayMode === displayModeEnum.Grid">
+                    <i class="fa fa-align-justify"></i>&nbsp;&nbsp; List View
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="/customers/0/edit" class="nav-link">
+                    <i class="fa fa-plus"></i>&nbsp;&nbsp;New Customer
+                </a>
+            </li>
+        </ul>
+        
+        <br/>
+        <app-customers-card 
+          [customers]="customers" 
+          [hidden]="displayMode !== displayModeEnum.Card"></app-customers-card>
+    
+        <app-customers-grid
+          [customers]="customers"   
+          [hidden]="displayMode !== displayModeEnum.Grid"></app-customers-grid>
+
+
+    </div>
+       
+</div>

@@ -1,0 +1,39 @@
+<div class="card">
+
+    <div class="card-body border border-primary">
+        <h5 class="card-title">Customer Information</h5>
+        <br/>
+        
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a routerLink="details" routerLinkActive="active" class="nav-link">
+                    <i class="fa fa-list"></i> &nbsp;&nbsp;Customer Details
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="orders" routerLinkActive="active" class="nav-link">
+                    <i class="fa fa-tags"></i> &nbsp;&nbsp;Customer Orders
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="edit" routerLinkActive="active" class="nav-link"> 
+               
+                    <i class="fa fa-edit"></i> &nbsp;&nbsp;Edit Customer
+                </a>
+            </li>
+        </ul>
+        
+        <br/>
+        <div class="container">
+            <router-outlet></router-outlet>
+            <br />
+            <br />
+            <a routerLink="/customers">View all Customers</a>
+        </div>
+
+
+    </div>
+       
+</div>
