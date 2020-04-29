@@ -9,7 +9,9 @@ export class DataService {
 
     
     port = '4200';
-    baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}:${this.port}`;
+    //for dev
+    //baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}:${this.port}`;
+    baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}`;
     customersBaseUrl = this.baseUrl + '/assets/data/customers.json';
     ordersBaseUrl = this.baseUrl + '/assets/data/orders.json';
     orders: IOrder[];
