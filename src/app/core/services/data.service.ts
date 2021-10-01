@@ -11,7 +11,7 @@ export class DataService {
     port = '4200';
     //for dev
     //baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}:${this.port}`;
-    baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}`;
+    baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}:`+this.port;
     customersBaseUrl = this.baseUrl + '/assets/data/customers.json';
     ordersBaseUrl = this.baseUrl + '/assets/data/orders.json';
     orders: IOrder[];
@@ -23,6 +23,7 @@ export class DataService {
     }
 
     getCustomers(): Observable<ICustomer[]> {
+        
         return this.http.get<ICustomer[]>(this.customersBaseUrl)
             .pipe(
                 map(customers => {
